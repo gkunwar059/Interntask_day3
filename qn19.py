@@ -18,9 +18,12 @@ class ValidParentheses:
         for char in self.str1:
             if char in opening_brackets:
                 stack.append(char)
+
+
             elif char in closing_brackets:
                 if len(stack) == 0 or matching_brackets[char] != stack.pop():
                     return False
+                
         return len(stack) == 0
 
 # Test

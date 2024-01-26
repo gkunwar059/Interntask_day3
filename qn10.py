@@ -17,6 +17,6 @@ def camel_to_snake(camel_string,separator='_'):
     return snake_string
 
 # output 
-print(camel_to_snake('ThisIsCamelCased'))
+print(camel_to_snake('this_is_snake_case'))
 # output for kebab
-print(camel_to_snake('ThisIsCamelCased','-'))   
+print(camel_to_snake('ThisIsCamelCased'))   

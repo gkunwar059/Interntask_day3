@@ -21,3 +21,18 @@ print(json_data)
 python_data = json.loads(json_data)
 # load the string ->loads
 print(python_data)
+
+
+
+
+# import json
+
+# data={"Name":"GAnesh","contact number":981022766,"age":12}
+
+# json_data=json.dumps(data)
+# print(json_data)
+
+# deserialize_data=json.loads(json_data)
+# print(deserialize_data)
+
+

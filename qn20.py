@@ -1,34 +1,40 @@
-# 20. Write a Python class to find the three elements that sum to zero
+
+
+# 20. Write a Python function  to find the three elements that sum to zero
 # from a list of n real numbers.
 # Input array : [-25, -10, -7, -3, 2, 4, 8, 10]
 # Output : [[-10, 2, 8], [-7, -3, 10]]
 
+class SumTriple:
+    
+    def sum_triplets(self,arr):
+        # sum of 3 number will be here
+        result=[]
+        n=len(arr)
 
-class ThreeSumZero:
-    def __init__(self, nums):
-        self.nums = sorted(nums)
+        sum_value=32
+        arr.sort()
 
-    def find_triplets(self):
-        result = []
-        for i in range(len(self.nums) - 2):
-            l = i + 1
-            r = len(self.nums) - 1
-            while l < r:
-                s = self.nums[i] + self.nums[l] + self.nums[r]
-                if s < 0:
-                    l += 1
-                elif s > 0:
-                    r -= 1
+
+        # for loop here 
+        for i in range(n-2):
+            left,right=i+1,n-1
+            
+            while left < right:
+                current_sum= arr[i]+arr[left]+arr[right]
+                if current_sum==sum_value:
+                    result.append([arr[i],arr[left],arr[right]])
+                    left +=1
+                    # right -=1
+                elif current_sum <sum_value:
+                    left+=1
                 else:
-                    result.append([self.nums[i], self.nums[l], self.nums[r]])
-                    while l < r and self.nums[l] == self.nums[l + 1]:
-                        l += 1
-                    while l < r and self.nums[r] == self.nums[r - 1]:
-                        r -= 1
-        return result
+                    right-=1
 
+        return result       
 
-find_three = ThreeSumZero([-25, -10, -7, -3, 2, 4, 8, 10])
-print(find_three.find_triplets())
-
-
+cls=SumTriple()
+input_array=[25, 5, 3, 2, 4, 1, 1,6,8, 10]
+output_triplelets=cls.sum_triplets(input_array)
+print("input array:",input_array)
+print("output:",output_triplelets)     

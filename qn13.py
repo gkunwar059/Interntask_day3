@@ -20,4 +20,6 @@ def write_csv(filename, data):
             writer.writerow(row)
 
 data = [('George', '4312 Abbey Road', 22), ('John', '54 Love Ave', 21)]
+
+
 write_csv('output.csv', data)

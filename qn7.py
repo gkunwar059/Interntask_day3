@@ -10,11 +10,23 @@ people=[('Ganesh','Kunwar',29),('Ramesh','Khadka',None),('Abishek','yadhav',26)]
 
 # filter out the none values and calculate the average age
 ages=[age for _,_, age in people if age is not None]
+# print(ages)
 average_age=sum(ages)/len(ages)
+
+# ages=[age for first_name,last_name,age in people if age is not None]
+# average_age=sum(ages)/len(ages)
 
 
 #print each person's name and wheather they are above or below the average age
 
 for first_name,last_name,age in people:
     if age is not None:
-        print(f"{first_name}{last_name} is {'old' if age>average_age else 'Young'}")
+       if age <average_age:
+           print(f"{first_name}{last_name} is old")
+        
+    else:
+        print(f"{first_name}{last_name} is young")
+        
+
+
+     # print(f"{first_name}{last_name} is {'old' if age>average_age else 'Young'}")

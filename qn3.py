@@ -4,6 +4,7 @@ from collections import defaultdict
 
 def print_anagrams(paragraph):
     words = paragraph.split()
+    # defaultdict - it automatically assign the default value 
     grouped_words = defaultdict(list)
 
     for word in words:
@@ -13,11 +14,11 @@ def print_anagrams(paragraph):
 
     # Print all anagrams together
     for group in grouped_words.values():
-        if len(group) >=1: # Only print if there are one pr more  than one anagram
+        if len(group) >1: # Only print if there are one or more  than one anagram
             print(" ".join(group))
 
 # Test the function
-print_anagrams("race car  god act")
+print_anagrams("race care   act cat dog god " )
 
 
 
